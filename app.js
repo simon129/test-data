@@ -8,7 +8,7 @@ async function hashHandler() {
     var moduleName = params.shift() || 'index';
 
     try {
-        var m = await import(`/${moduleName}.js`)
+        var m = await import(`./${moduleName}.js`)
         appEl.innerHTML = await m.default(RAW_DATA, ...params.map(x => decodeURIComponent(x)));
     }
     catch (e) {
