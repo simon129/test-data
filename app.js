@@ -9,7 +9,7 @@ async function hashHandler() {
 
     try {
         var m = await import(`./${moduleName}.js`)
-        appEl.innerHTML = await m.default(RAW_DATA, ...params.map(x => decodeURIComponent(x)));
+        appEl.innerHTML = await m.default(appEl, RAW_DATA, ...params.map(x => decodeURIComponent(x)));
     }
     catch (e) {
         console.error(e)
